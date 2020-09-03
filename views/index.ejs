@@ -1,0 +1,77 @@
+<%- include("header") %>
+
+<div class="jumbotron">
+    <div class="container-md text-center">
+        <h1 class="display-4">Hello Book Lovers</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+            to
+            featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-outline-info btn-lg" href="/contact" role="button">Contact Us</a>
+    </div>
+</div>
+<div class="container-md">
+    <h3 class="text-info mb-4">All Latest Books</h3>
+    <% if(!bookLists){ %>
+    <h3>No books are currently founded</h3>
+    <% } else { %>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
+        <% bookLists.forEach((bookList)=>{ %>
+        <div class="col mb-4">
+            <div class="shadow-sm card h-100 border-light">
+                <img src="<%= bookList.book_featured_image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a class="text-info" href="single_book/<%= bookList.id %>/<%= bookList.book_title %>">
+                        <h5 class="card-title"><%= bookList.book_title %></h5>
+                    </a>
+                    <p class="card-text"><%= bookList.book_description.slice(0,100) %> . . .</p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+    <% } %>
+    <% if(page > 1){ %>
+    <div class="mt-3 border-top pt-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li id="prev" class="page-item <% if(current === 1){ %>
+                    disabled
+                <% } %> ">
+                    <a class="page-link" href="#">Previous</a>
+                </li>
+                <% for(i=0;i<page; i++){ %>
+                <li class="page-item" id="pagi-<%= i+1 %>"><a class="page-link"
+                        href="/?page=<%= i+1 %>&limit=<%= limit %>"><%=i+1 %></a>
+                </li>
+                <% } %>
+                <li id="next" class="page-item <% if(current===page){ %>
+                    disabled
+                <% } %> ">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <% } %>
+</div>
+<%- include("footer") %>
+<script>
+    const currentPage = Number("<%= current %>") || 1
+    if (currentPage === 1) {
+        $("#prev").addClass("disabled");
+        $("#pagi-1").addClass("disabled");
+    } else {
+        $(`#pagi-${currentPage}`).addClass("disabled")
+    }
+    const prevDisabled = $("#prev").hasClass("disabled");
+    const nextDisabled = $("#next").hasClass("disabled");
+    if (!prevDisabled) {
+        $("#prev").children().attr("href", `/?page=${currentPage-1}&limit=<%= limit %>`)
+    }
+    if (!nextDisabled) {
+        $("#next").children().attr("href", `/?page=${currentPage+1}&limit=<%= limit %>`)
+    }
+</script>

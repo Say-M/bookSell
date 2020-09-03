@@ -1,0 +1,26 @@
+<%- include("header") %>
+
+<div class="container-md">
+    <h3 class="text-info my-4">All <%= category %> Books</h3>
+    <% if(!bookItems){ %>
+    <h3>No books are currently founded on <%= category %> category</h3>
+    <% }  else { %>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
+        <% bookItems.forEach((bookItem)=>{  %>
+        <div class="col mb-4">
+            <div class="shadow-sm card h-100 border-light">
+                <img src="<%= bookItem.book_featured_image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a class="text-info" href="/single_book/<%= bookItem.id %>/<%= bookItem.book_title %>">
+                        <h5 class="card-title"><%= bookItem.book_title %></h5>
+                    </a>
+                    <p class="card-text"><%= bookItem.book_description.slice(0,100) %></p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+    <% } %>
+</div>
+
+<%- include("footer") %>

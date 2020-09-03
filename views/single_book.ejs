@@ -1,0 +1,49 @@
+<%- include("header") %>
+<div class="container-md my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <% if(!bookInfo){ %>
+      <h3 class="text-danger">
+        Sorry! :( this book is not founded or admin might delete this book from
+        their libaris.
+      </h3>
+      <% } else {%>
+      <img
+        src="<%= bookInfo.book_featured_image %>"
+        class="w-100 img-thumbnail"
+        alt=""
+      />
+      <div class="price-info border-bottom py-2">
+        <% if (!bookInfo.book_discount) { %>
+        <h4 class="d-inline">Price : <%= bookInfo.book_price %>৳</h4>
+        <% }else{ %>
+        <h4 class="d-inline">Price :<%= bookInfo.book_discount %>৳</h4>
+        <% } %> <% if (bookInfo.book_discount) { %>
+        <span class="border-left ml-3 pl-3"
+          >Actual Price :
+          <del class="text-muted"><%= bookInfo.book_price %>৳ <% } %> </del>
+        </span>
+        <span class="border-left ml-3 pl-3"
+          >Category : <%= bookInfo.book_category %></span
+        >
+      </div>
+      <h3 class="text-info mt-3"><%= bookInfo.book_title %></h3>
+      <p><%= bookInfo.book_description %></p>
+      <% } %>
+    </div>
+    <div class="col-md-4">
+      <ul class="m-0">
+        <% categories.forEach((category)=>{ %>
+        <li class="mb-2">
+          <a
+            class="font-weight-bold text-dark"
+            href="/category/<%= category.id %>/<%= category.name %>"
+            ><%= category.name %></a
+          >
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</div>
+<%- include("footer") %>
