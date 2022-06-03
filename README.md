@@ -8,9 +8,5 @@
 <strong>Features : </strong>Full resposnive, file upload system, dynamic pagination, unlimited create category, easy coding<br><br>
 <strong>Description : </strong>This website is created by Mohammad Sayem. This design is so simple. This design is totaly based on Bootstrap. This is a part of my practice.
 So I don't focus on design carefully. Later on i'll redevelop this.<br><br>
-<strong>Screenshots : </strong>
-<img src="/public/content/ID-3a45c561-a92b-4e40-af4e-fdaa150a7c1e-IMG-OrXDQHjMaJMh6WD3_D2awVL5NR3Dhx9CDrFa4qwgvGI-MEDIUM.jpg"/>
-<img src="https://s3.amazonaws.com/awesomescreenshot/upload/1100730/1137949/55225c5b-8f56-4921-7f28-2d6b3054fbc7.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1599337659&Signature=T2im2zBSGyxSLuNkhBx5EiUWua8%3D"/><br>
-<img src="https://s3.amazonaws.com/awesomescreenshot/upload/1100730/1137949/1af44093-ffbf-4128-6128-2bd2dc43ee32.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1599337754&Signature=dZif6gUoL9JCzC1LAtCVPvDc5%2Fs%3D"/><br>
-<img src="https://s3.amazonaws.com/awesomescreenshot/upload/1100730/1137949/2ce7d327-f9bd-4c1e-4b3a-049ec7801ebc.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1599337821&Signature=cbAfYS7Y5RYsLZBUPF6YuKQEieg%3D"/><br>
-<img src="https://s3.amazonaws.com/awesomescreenshot/upload/1100730/1137949/3736f28f-7d57-44ab-48c5-f8e62a56d53e.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1599152503&Signature=JeHyrNZwfuR0fYmipJMMici5iSo%3D"/><br>
+<strong>Screenshots : </strong><br>
+<img src="/public/content/Best Book Selling Website.png"/>
